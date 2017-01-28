@@ -25,7 +25,7 @@ Then set up Go:
   - Set the `$GOPATH` environment variable accordingly: `export GOPATH=~/gocode`
   - Add the `bin` directory to your `$PATH`, for example: ` export PATH=$PATH:~/gocode/bin`
   
-Now you can intall owuserrestore using `go get`:
+Now you can install owuserrestore using `go get`:
 
 ```
 go get github.com/thomasheller/owuserrestore
