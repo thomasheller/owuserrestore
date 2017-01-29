@@ -50,9 +50,7 @@ func main() {
 		printUserIdTables(dbOld, *dbOldName)
 		printUserIdRecordCounts(*userID, *dbOldName, dbOld, dbCurrent)
 		missingRecords := printDeletedRecords(*userID, *dbOldName, dbOld, dbCurrent)
-		// missingRecords := printDeletedRecords(*userID, dbOld, dbCurrent)
 		restoreMissingRecords(missingRecords, *userID, dbOld, dbMerge)
-		// printUserIdRecordCounts(*userID, dbOld, dbMerge)
 	}
 }
 
@@ -152,10 +150,7 @@ func printDeletedRecords(userID int, dbOldName string, dbOld *sql.DB, dbCurrent 
 
 		if len(oldIDs) > len(newIDs) {
 			missingRecords[tableName] = missingIDs
-
 			fmt.Printf("%s: %v\n", tableName, missingIDs)
-			// fmt.Printf("old: %v\n", oldIDs)
-			// fmt.Printf("new: %v\n", newIDs)
 		}
 	}
 
@@ -219,9 +214,6 @@ func restoreMissingRecords(missingRecords map[string][]int, userID int, dbOld *s
 				insert = insert + "?"
 			}
 			insert = insert + ") "
-
-			// fmt.Printf("columns (%d): %v\n", colNum, columns)
-			// fmt.Println(insert)
 
 			stmt, err := dbMerge.Prepare(insert)
 			checkErr(err)
