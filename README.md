@@ -1,5 +1,7 @@
 # Oxwall User Restore (owuserrestore)
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/thomasheller/owuserrestore)](https://goreportcard.com/report/github.com/thomasheller/owuserrestore)
+
 If you accidentially deleted a user from your Oxwall (www.oxwall.com)
 install (or the user deleted his/her account and now wants it back), 
 this script helps you recovering most user data. In fact, it merges
