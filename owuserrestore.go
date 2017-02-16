@@ -184,7 +184,7 @@ func restoreMissingRecords(missingRecords map[string][]int, userID int, dbOld *s
 			container := make([]interface{}, colNum)
 			values := make([]interface{}, colNum)
 
-			for i, _ := range container {
+			for i := range container {
 				values[i] = &container[i]
 			}
 
@@ -207,7 +207,7 @@ func restoreMissingRecords(missingRecords map[string][]int, userID int, dbOld *s
 				insert = insert + "`" + columnName + "`"
 			}
 			insert = insert + ") VALUES ("
-			for i, _ := range columns {
+			for i := range columns {
 				if i > 0 {
 					insert = insert + ","
 				}
@@ -257,7 +257,7 @@ func intInSlice(lookup int, slice []int) bool {
 
 func checkErr(e error) {
 	if e != nil {
-		log.Println("An error occured! Stopped half-way through...")
+		log.Println("An error occurred! Stopped half-way through...")
 		log.Fatal(e)
 	}
 }
